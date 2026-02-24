@@ -1,0 +1,25 @@
+# Configuration for isaac_joint_state_splitter
+#
+# subscribe_topic: The JointState topic to subscribe to.
+# publish_topics:  A list of topics to publish split JointState messages.
+#   - topic_name:  The output topic name.
+#     joint_names: List of joint names to include in this topic.
+
+subscribe_topic: /joint_states
+
+publish_topics:
+  - topic_name: /left_arm/joint_states
+    joint_names:
+      - left_shoulder_joint
+      - left_upper_arm_joint
+      - left_elbow_joint
+      - left_forearm_joint
+      - left_wrist_joint
+
+  - topic_name: /right_arm/joint_states
+    joint_names:
+      - right_shoulder_joint
+      - right_upper_arm_joint
+      - right_elbow_joint
+      - right_forearm_joint
+      - right_wrist_joint
