@@ -3,7 +3,7 @@ import sys
 import yaml
 import rclpy
 from rclpy.node import Node
-from rclpy.qos import QoSProfile, QoSReliabilityPolicy, QoSDurabilityPolicy, QoSHistoryPolicy
+from rclpy.qos import QoSProfile
 from sensor_msgs.msg import JointState
 
 
@@ -102,8 +102,8 @@ def main(args=None):
     rclpy.init(args=args)
 
     # The config file path is passed as a ROS parameter or CLI argument.
-    # Usage: ros2 run isaac_joint_state_splitter joint_state_splitter --ros-args -p config_file:=/path/to/config.yml
-    #    or: ros2 run isaac_joint_state_splitter joint_state_splitter /path/to/config.yml
+    # Usage: ros2 run joint_state_splitter splitter --ros-args -p config_file:=/path/to/config.yml
+    #    or: ros2 run joint_state_splitter splitter /path/to/config.yml
 
     node_tmp = Node('_joint_state_splitter_bootstrap')
     node_tmp.declare_parameter('config_file', '')
@@ -118,10 +118,10 @@ def main(args=None):
         else:
             print(
                 "Usage:\n"
-                "  ros2 run isaac_joint_state_splitter joint_state_splitter "
+                "  ros2 run joint_state_splitter splitter "
                 "--ros-args -p config_file:=/path/to/config.yml\n"
                 "  or\n"
-                "  ros2 run isaac_joint_state_splitter joint_state_splitter "
+                "  ros2 run joint_state_splitter splitter "
                 "/path/to/config.yml",
                 file=sys.stderr,
             )

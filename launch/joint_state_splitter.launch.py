@@ -8,7 +8,7 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
-    pkg_share = get_package_share_directory('isaac_joint_state_splitter')
+    pkg_share = get_package_share_directory('joint_state_splitter')
     default_config = os.path.join(pkg_share, 'config', 'example_config.yml')
 
     config_file_arg = DeclareLaunchArgument(
@@ -18,8 +18,8 @@ def generate_launch_description():
     )
 
     splitter_node = Node(
-        package='isaac_joint_state_splitter',
-        executable='joint_state_splitter',
+        package='joint_state_splitter',
+        executable='splitter',
         name='joint_state_splitter',
         parameters=[{'config_file': LaunchConfiguration('config_file')}],
         output='screen',

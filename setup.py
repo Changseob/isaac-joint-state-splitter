@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'isaac_joint_state_splitter'
+package_name = 'joint_state_splitter'
 
 setup(
     name=package_name,
@@ -21,7 +21,7 @@ setup(
     license='MIT',
     entry_points={
         'console_scripts': [
-            'joint_state_splitter = isaac_joint_state_splitter.joint_state_splitter:main',
+            'splitter = joint_state_splitter.joint_state_splitter:main',
         ],
     },
 )
